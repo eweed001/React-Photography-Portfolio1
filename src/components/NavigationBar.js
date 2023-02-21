@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link, withRouter, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, withRouter, Redirect, BrowserRouter } from "react-router-dom";
 import {
     Navbar, NavbarBrand, NavbarNav, NavItem, NavLink, NavbarToggler, Collapse, Container, FormInline,
     Dropdown, DropdownToggle, DropdownMenu, DropdownItem
@@ -12,8 +12,8 @@ import GalleryContainer from './GalleryContainer';
 import BlogPage from './BlogPage'
 import TestPage from './TestPage'
 import About from './AboutPage'
-import ProjectHeader from './Projects/ProjectHeader'
-import ProjectContainer from './Projects/ProjectContainer'
+// import ProjectHeader from './Projects/ProjectHeader'
+// import ProjectContainer from './Projects/ProjectContainer'
 import Routes from './Routes'
 
 // ******** Project Routes ******** //
@@ -57,40 +57,42 @@ class NavigationBar extends React.Component {
 
     render() {
         const overlay = <div id="sidenav-overlay" style={{ backgroundColor: 'transparent' }} onClick={this.handleNavbarClick} />
-
+        console.log("hi")
         return (
-            // <Router>
+                <BrowserRouter>
+                
             <div id="navigation">
                 <Navbar color="white" light expand="md" fixed="top" scrolling >
                     <NavbarBrand href="/" >
-                        <strong className="brand">Daniel NuWin | Portfolio</strong>
+                        <strong className="brand">emily weed | portfolio</strong>
                        {/* <div><img style={{width:'10%', marginRight:" -11em"}} src={require('../images/logo.png')}/> </div>  */}
                     </NavbarBrand>
                     <NavbarToggler onClick={this.onClick} />
                     <Collapse isOpen={this.state.collapse} navbar>
                         <NavbarNav left>
-                            <NavItem>
+                            {/* Commented out bc don't need a nav bar right now */}
+                            {/* <NavItem>
                                 {/* <NavLink className="brand" to="/">Home</NavLink> */}
-                                <NavLink onClick={this.onClick} className="" to="/">Home</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <AnchorLink offset={() => 0} onClick={this.onClick} className="nav-link" href='#headerbox'>Portfolio</AnchorLink>
-                            </NavItem>
-                            <NavItem>
+                                {/* <NavLink onClick={this.onClick} className="" to="/">home</NavLink> */}
+                            {/* </NavItem> */} 
+                            {/* <NavItem>
+                                <AnchorLink offset={() => 0} onClick={this.onClick} className="nav-link" href='#headerbox'>portfolio</AnchorLink>
+                            </NavItem> */}
+                            {/* <NavItem>
                                 <NavLink onClick={this.onClick} className="" to="/projects">Projects</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink onClick={this.onClick} className="" to="/about">About Me</NavLink>
-                            </NavItem>
-                            <NavItem>
+                            </NavItem> */}
+                            {/* <NavItem>
+                                <NavLink onClick={this.onClick} className="" to="/about">about me</NavLink>
+                            </NavItem> */}
+                            {/* <NavItem> */}
                                 {/* <NavLink onClick={this.onClick} className="" to="/blog">Blog</NavLink> */}
-                            </NavItem>
-                            <NavItem>
+                            {/* </NavItem> */}
+                            {/* <NavItem> */}
                                 {/* <NavLink onClick={this.onClick} className="" to="/testpage">Test Page</NavLink> */}
                                 {/* <NavLink onClick={this.onClick} className="" to="/contactcard">ContactCard</NavLink> */}
-                            </NavItem>
+                            {/* </NavItem> */}
                         </NavbarNav>
-                        <NavbarNav right>
+                        {/* <NavbarNav right>
                             <NavItem >
                                 <FormInline waves>
                                     <div className="md-form my-0">
@@ -98,13 +100,13 @@ class NavigationBar extends React.Component {
                                     </div>
                                 </FormInline>
                             </NavItem>
-                        </NavbarNav>
+                        </NavbarNav> */}
                     </Collapse>
                 </Navbar>
 
                 {this.state.collapse && overlay}
             </div>
-            // </Router>
+        </BrowserRouter>
         );
     }
 };

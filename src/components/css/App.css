@@ -110,7 +110,7 @@
 	/* background-image: url('../../images/About_Page/about_header.jpg'); */
 	/* background-image: url('../../images/About_Page/home1.jpg'); */
 	/* background-image: url('../../images/About_Page/home2.jpg'); */
-	background-image: url('../../images/Backgrounds/Carousel-12.jpg');
+	background-image: url('../../images/backgrounds/carousel1.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
@@ -118,21 +118,21 @@
 }
 
 #carouselIntro .view2 {
-	background-image: url('../../images/Backgrounds/Carousel-8.jpg');
+	background-image: url('../../images/backgrounds/carousel2.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
 	height: 103vh;
 }
 #carouselIntro .view3 {
-	background-image: url('../../images/Backgrounds/Carousel-10.jpg');
+	background-image: url('../../images/backgrounds/carousel3.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
 	height: 103vh;
 }
 #carouselIntro .view4 {
-	background-image: url('../../images/Backgrounds/Carousel-11.jpg');
+	background-image: url('../../images/backgrounds/test.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
@@ -293,7 +293,7 @@ input[type="button"].down, .button.down, button.down {
 	height: 5em;
 	line-height: 4.5em;
 	padding: 0;
-	background-image: url("../../images/buttons/dark-arrow.svg");
+	background-image: url("../../images/buttons/down_arrow.png");
 	background-position: center center;
 	background-repeat: no-repeat;
 	text-indent: -10em;
@@ -322,6 +322,40 @@ button:hover {
 
 .button.style2:active, button.style2:active {
 	background-color: rgba(229, 230, 231, 0.375);
+}
+
+/* hover information */
+.camera-details{
+  display: none;
+	width:100%;
+	height:10%;
+	align-self: flex-end;
+	margin-left: 2%;
+	padding-bottom: 9%;
+	text-align: left;
+	font-size:medium;
+	color:white;
+}
+.date-and-location{
+	display: none;
+	width:100%;
+	height:10%;
+	align-self: flex-end;
+	margin-right: 2%;
+	padding-bottom: 9%;
+	text-align: right;
+	font-size:medium;
+	color:white;
+}
+[class^="view overlay zoom"]:hover .camera-details {
+	display:block;
+}
+[class^="view overlay zoom"]:hover .date-and-location{
+	display:block;
+}
+
+.hover-camera {
+	font-size: medium;
 }
 
 /* ===========================
@@ -686,7 +720,7 @@ button:hover {
 	/* .ap-mobile-cover  {
 		content: url('../../images/About_Page/about.jpg') !important;
 	} */
-	.ap-mobile-cover-Lauren_Lychee {
+	/* .ap-mobile-cover-Lauren_Lychee {
 		content: url('../../images/10.04.18_Lauren_Lychee/Lauren_Lychee-11.jpg') !important;
 	}
 	.ap-mobile-cover-Lilly_Linkedin {
@@ -694,7 +728,7 @@ button:hover {
 	}
 	.ap-mobile-cover-Ninasky {
 		content: url('../../images/09.01.19_Ninasky/Ninasky-19.jpg') !important;
-	}
+	} */
 	.featured-header-mobile img {
 		/* content: url('../../images/mobile_header.jpg') !important; */
 		top: 14em !important;

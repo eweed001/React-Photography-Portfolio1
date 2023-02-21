@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
 import './css/App.css';
 //Components
 import NavigationBar from './NavigationBar';
@@ -29,10 +30,12 @@ class App extends Component {
   }
   
   render() {   
-    // console.log("App > Render()",this.props);
+    console.log("App > Render()",this.props);
      
     return (
+      
       <div>
+        
         <Headroom >
           <NavigationBar />
           <div>
@@ -43,7 +46,9 @@ class App extends Component {
 
         <Routes />
         <FooterPage />
+        
       </div>
+      
     );
   }
 }

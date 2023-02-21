@@ -14,9 +14,9 @@ const All_ProjectsReducer = (state = initialState, action) => {
     //Allows for the reverse when clicking filter on any category
     // const reverseCopy = projCopy.reverse(); //Actually manipulates this variable projcopy
 
-    // console.log("initial state: ", JSON.stringify(projCopy));
-    // console.log("newState : ", JSON.stringify(newState));
-    // console.log(" state: ", JSON.stringify(state));
+    console.log("initial state: ", JSON.stringify(projCopy));
+    console.log("newState : ", JSON.stringify(newState));
+    console.log(" state: ", JSON.stringify(state));
     switch (action.type) {
         case CONSTANT_NEW:
             newState.projectObject = initialState.projectObject;

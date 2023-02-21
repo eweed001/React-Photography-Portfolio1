@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './css/App.css'
 
 //Import responsive gallery component 
-import ResponseiveGallery from './ResponsiveGallery';
+import ResponsiveGallery from './ResponsiveGallery';
 //import DEFAULT_IMAGES from './Images';
 import { View } from 'mdbreact'
 
@@ -38,7 +38,7 @@ export default class GalleryContainer extends Component {
         {/* Remove Container if you want entire page gallery */}
         <View id="GalleryContainer" className={ style }>
           <section id="gallery">
-            <ResponseiveGallery showFilter={showFilter} images={imageArray}/>
+            <ResponsiveGallery showFilter={showFilter} images={imageArray}/>
           </section>
         </View>
 

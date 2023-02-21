@@ -9,13 +9,13 @@ const ContactPage = () => {
     });    // console.log("*******Lazy Load*******");
     return (
         <Container id="aboutpage" className="marginTop3">
-            <h2 className="h1-responsive font-weight-bold text-center">Want to Chat? </h2>
+            {/* <h2 className="h1-responsive font-weight-bold text-center">Want to Chat? </h2>
             <hr className="" />
 
             <Row>
                 <Col lg="5">
                     <View className="rounded z-depth-2 mb-lg-0 mb-4" hover waves>
-                        <img className="img-fluid" src={require("../images/About_Page/about2.jpg")} alt="Sample image" />
+                        <img className="img-fluid" src={require("../images/backgrounds/test.jpg")} alt="Sample image" />
                         <a><Mask overlay="white-slight" /></a>
                     </View>
                 </Col>
@@ -29,7 +29,7 @@ const ContactPage = () => {
                     <h4>Instagram: <strong>  @danielnuwin</strong></h4>
                 </Col>
                 
-            </Row>
+            </Row> */}
         </Container>
     );
 }

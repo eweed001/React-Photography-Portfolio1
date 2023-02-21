@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import Lightbox from 'react-images';
 import PropTypes from 'prop-types';
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
@@ -19,19 +19,22 @@ function trackGA(action) {
   
   ReactGA.event({
     category: 'Clicked: ' + action,
-    action: 'Clicked Portolio Image/Filter' + action,
+    action: 'Clicked Portfolio Image/Filter' + action,
   });
 }
 
 class ResponsiveGallery extends Component {
   constructor(props) {
     super(props);
+   
     this.state = {
       lightboxIsOpen: false,
       currentImage: 0,
       imageArray: [],
       showFilter: false,
+      hovered: false
     };
+    // this.onHover = this.onHover.bind(this);
 
     //Lightbox
     this.closeLightbox = this.closeLightbox.bind(this);
@@ -48,6 +51,8 @@ class ResponsiveGallery extends Component {
     this.cursorStyle = { cursor: "pointer" };
     this.renderFilter = this.renderFilter.bind(this);
     this.showThumbnailBanner = this.showThumbnailBanner.bind(this);
+
+    this.onHover = this.onHover.bind(this)
 
   }
   //************************ LightBox *************************//
@@ -71,8 +76,6 @@ class ResponsiveGallery extends Component {
     });
   }
   gotoNext() {
-    // console.log("length: " + this.state.imageArray.length)
-    // console.log("current image: " + this.state.currentImage)
     //Stops from going to next index when reached end of array
     if ((this.state.currentImage + 1) < this.state.imageArray.length) {
       this.setState({
@@ -98,7 +101,7 @@ class ResponsiveGallery extends Component {
       return (
         <div className="stripe light">
           <div>
-            <p>{obj.caption}</p>
+            {/* <p>{obj.caption}</p> */}
             <p><i className="fa fa-calendar date" aria-hidden="true"> October 5th, 2018</i></p>
           </div>
         </div>
@@ -106,12 +109,22 @@ class ResponsiveGallery extends Component {
     }
   }
   //END************************ LightBox *************************//
+  onHover(index, event, obj){
+    console.log("hovered")
+    console.log(index)
+    console.log(obj.category)
+    console.log(obj.caption)
+  }
 
   renderGallery(images) {
-    console.log("*****Lazy Load Responsive Gallery******");
+    console.log("renderGallery");
+
+    console.log("*****Lazy Load Responsive Gallery******here");
     if (!images) {
+      console.log("no images")
       return;
     }
+
     const gallery = images.map((obj, i) => {
       return (
         //Old animation
@@ -120,17 +133,16 @@ class ResponsiveGallery extends Component {
         // <LazyLoad key={i} offsetTop={2000 }>
         <LazyLoad key={i}>
           <ScrollAnimation key={i} delay={i * 15} animateIn="fadeIn" animateOnce={true} >
-            <div className={`view overlay zoom ` + obj.category} data-category={obj.category}>
+            <div className={`view overlay zoom ` + obj.category} data-category={obj.category} onMouseOver={(e) => this.onHover(i, e, obj)}>
               <img alt=""
                 className=""
-                // onClick={(e) => this.openLightbox(i, e)}
                 src={obj.src}
                 style={{ width: "100%", height: "auto", display: "block" }}
                 onClick={() => trackGA("image: " + i)}
               />
-              <div style={this.cursorStyle} className="mask flex-center rgba-white-light" onClick={(e) => this.openLightbox(i, e)}>
-                {/* Show Banner only on Feature Page */}
-                {/* {this.showThumbnailBanner(obj)} */}
+              <div style={{ cursor: 'pointer',background: 'linear-gradient(to bottom, hsla(0, 0%, 0%, 0.1), hsla(0, 0%, 00%, 0.6))'}} className="mask flex-center" onClick={(e) => this.openLightbox(i, e)} >
+                <div className = "camera-details">{obj.caption[0]} <br/> {obj.caption[1]}</div>
+                <div className = "date-and-location">{obj.caption[2]} <br/> {obj.caption[3]}</div>
               </div>
             </div>
           </ScrollAnimation>
@@ -181,20 +193,25 @@ class ResponsiveGallery extends Component {
   }
 
   renderFilter(showFilter) {
-    const cursorStyle = { cursor: "pointer" };
+    const cursorStyle = { cursor: "pointer"};
+    const overlayAndCursor = { cursor: "pointer", backgroundColor: "black"};
+
+    // const testStyle = { display: "none", margin: "-10px" };
 
     if (showFilter) {
       return (
         <Tabs id="Tab" defaultTab="one" className="GalleryContainer">
           <TabList className="TabList" style={{ border: 'none', margin: '0em 0 1em 0em' }}>
-            <Tab style={cursorStyle} tabFor="one" onClick={() => this.filterImage("*")}>Featured</Tab>
-            <Tab style={cursorStyle} tabFor="two" onClick={() => this.filterImage("travel")}>Travel</Tab>
-            <Tab style={cursorStyle} tabFor="three" onClick={() => this.filterImage("ppl")}>People</Tab>
-            <Tab style={cursorStyle} tabFor="four" onClick={() => this.filterImage("urb")}>Urban & Street</Tab>
-            <Tab style={cursorStyle} tabFor="five" onClick={() => this.filterImage("wed")}>Weddings</Tab>
-            <Tab style={cursorStyle} tabFor="six" onClick={() => this.filterImage("concert")}>Concert</Tab>
+            <Tab style={cursorStyle} tabFor="one" onClick={() => this.filterImage("*")}>All</Tab>
+            <Tab style={cursorStyle} tabFor="two" onClick={() => this.filterImage("travel")}>travel</Tab>
+            <Tab style={cursorStyle} tabFor="three" onClick={() => this.filterImage("pets")}>pets</Tab>
+            <Tab style={cursorStyle} tabFor="four" onClick={() => this.filterImage("home")}>home</Tab>
+            <Tab style={cursorStyle} tabFor="four" onClick={() => this.filterImage("misc")}>misc</Tab>
+
+            {/* <Tab style={cursorStyle} tabFor="five" onClick={() => this.filterImage("wed")}>Weddings</Tab>
+            <Tab style={cursorStyle} tabFor="six" onClick={() => this.filterImage("concert")}>Concert</Tab> */}
             {/* <Tab style={this.cursorStyle} tabFor="six" onClick={() => this.filterImage("all")}>All</Tab> */}
-            <Tab tabFor="sevon">
+            {/* <Tab tabFor="sevon">
               <Dropdown>
                 <DropdownToggle className="brand colorBlackLink" nav caret>Projects</DropdownToggle>
                 <DropdownMenu>
@@ -202,11 +219,11 @@ class ResponsiveGallery extends Component {
                     <NavItem className="nav-format">
                       <NavLink className="brand nav-format" to="/projects">All Projects</NavLink>
                       {/* <NavLink className="brand nav-format" to="/laurenlychee"> > Lauren Lychee</NavLink> */}
-                    </NavItem>
+                    {/* </NavItem>
                   </NavbarNav>
                 </DropdownMenu>
-              </Dropdown>
-            </Tab>
+              </Dropdown> */}
+            {/* </Tab> */}
           </TabList>
         </Tabs>
       );
@@ -249,9 +266,13 @@ class ResponsiveGallery extends Component {
 
 
   render() {
-    const cursorStyle = { cursor: "pointer" };
+    console.log("here in normal render")
+    const cursorStyle = { cursor: "pointer",
+                          backgroundColor: 'rgba(0, 0, 0, 0.9)' } ;
+    console.log(this.state.imageArray)
     return (
       <div className="content page-section spad center">
+
 
         {this.renderFilter(this.state.showFilter)}
         {/* <LazyLoad offsetTop={3000}> */}

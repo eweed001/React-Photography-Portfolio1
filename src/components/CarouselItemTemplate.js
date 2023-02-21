@@ -37,21 +37,21 @@ const CarouselItemTemplate = (props) => {
                                         <Col md="" className="mb-4 white-text text-center dark intro-container" style={{ border: "solid", backgroundColor: '#2715151f' }}>
                                             <div className="white-text text-center text-md-left col-md-6">
                                                 <div>
-                                                    <h4 className="display-4 intro-title" > Daniel NuWin </h4>
+                                                    <h4 className="display-4 intro-title" > emily weed </h4>
                                                     {/* <h3 className="display-5 intro-subtitle" > Photography </h3> */}
-                                                    <h3 className="display-5 intro-subtitle" > Photography | Travel | Tech </h3>
+                                                    {/* <h3 className="display-5 intro-subtitle" > Photography | Travel | Tech </h3> */}
                                                 </div>
                                                 <hr className="hr-light" />
                                                 {/* <h6 className="mb-4 display-6 text-center" style={{ color: 'black', fontWeight: "400" }}> “Embrace the unknown for which it will eventually bring you to where you need to be”</h6> */}
                                                 <AnchorLink href='#headerbox'>
-                                                    <Button color="white" onClick={() => trackGA('Portfolio_Anchor')}>Portfolio</Button>
+                                                    <Button outline color="white" onClick={() => trackGA('Portfolio_Anchor')}>Portfolio</Button>
                                                 </AnchorLink>
-                                                <Link to="/projects">
+                                                {/* <Link to="/projects">
                                                     <Button outline color="white" onClick={() => trackGA('Projects_Anchor')}> Projects</Button>
-                                                </Link>
+                                                </Link> */}
                                                 {/* <AnchorLink href='#contactcard'> */}
                                                 <AnchorLink href='#footer_anchor'>
-                                                    <Button color="red" onClick={() => trackGA('Contact_Anchor')}> Contact </Button>
+                                                    <Button outline color="white" onClick={() => trackGA('Contact_Anchor')}> Contact </Button>
                                                 </AnchorLink>
                                             </div>
                                         </Col>

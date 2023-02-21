@@ -89,7 +89,7 @@ class ResponsiveGallery extends Component {
       return (
         <div className="stripe light">
           <div>
-            <p>{obj.caption}</p>
+            {/* <p>{obj.caption}</p> */}
             <p><i className="fa fa-calendar date" aria-hidden="true"> October 5th, 2018</i></p>
           </div>
         </div>
@@ -196,10 +196,10 @@ class ResponsiveGallery extends Component {
             <Tab style={cursorStyle} tabFor="one" onClick={() => this.filterImage("*")}>Featured</Tab>
             <Tab style={cursorStyle} tabFor="two" onClick={() => this.filterImage("travel")}>Travel</Tab>
             <Tab style={cursorStyle} tabFor="three" onClick={() => this.filterImage("ppl")}>People</Tab>
-            <Tab style={cursorStyle} tabFor="four" onClick={() => this.filterImage("urb")}>Urban & Street</Tab>
-            <Tab style={cursorStyle} tabFor="five" onClick={() => this.filterImage("wed")}>Weddings</Tab>
+            {/* <Tab style={cursorStyle} tabFor="four" onClick={() => this.filterImage("urb")}>Urban & Street</Tab>
+            <Tab style={cursorStyle} tabFor="five" onClick={() => this.filterImage("wed")}>Weddings</Tab> */}
             {/* <Tab style={this.cursorStyle} tabFor="six" onClick={() => this.filterImage("all")}>All</Tab> */}
-            <Tab tabFor="sevon">
+            {/* <Tab tabFor="sevon">
               <Dropdown>
                 <DropdownToggle className="brand colorBlackLink" nav caret>Projects</DropdownToggle>
                 <DropdownMenu>
@@ -207,11 +207,11 @@ class ResponsiveGallery extends Component {
                     <NavItem className="nav-format">
                       <NavLink className="brand nav-format" to="/projects">All Projects</NavLink>
                       {/* <NavLink className="brand nav-format" to="/laurenlychee"> > Lauren Lychee</NavLink> */}
-                    </NavItem>
+                    {/* </NavItem>
                   </NavbarNav>
                 </DropdownMenu>
               </Dropdown>
-            </Tab>
+            </Tab> */} 
           </TabList>
         </Tabs>
       );

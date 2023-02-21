@@ -17,6 +17,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import rootReducer from './components/Store/Reducer';
 const store = createStore(rootReducer);
+console.log(store);
 
 // document.body.style.zoom="80%";
 //HashHistory works for github pages but not on browser router with godaddy domain. 
