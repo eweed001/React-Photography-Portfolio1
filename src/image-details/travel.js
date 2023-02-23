@@ -10,7 +10,8 @@ var travel_data = [
   ["iPhone X","","Mazama, WA","May 26, 2021"],
   ["iPhone X","","North Creek, NY","October 22, 2022"],
   ["Samsung Galaxy S22","","Moab, UT","April 6, 2022"],
-  ["iPhone X","","Mt. Rainier Ntl. Park, WA","August 5, 2022"]
+  ["iPhone X","","Mt. Rainier Ntl. Park, WA","August 5, 2022"],
+  ["iPhone X","","Seattle, WA","August 14, 2022"]
 ]
 
 export default travel_data

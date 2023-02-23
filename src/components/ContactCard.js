@@ -9,7 +9,7 @@ import ScrollAnimation from 'react-animate-on-scroll';
 
 const ContactCard = () => {
     // console.log("*******Lazy Load*******");
-    const myPhoto = require("../images/backgrounds/test.jpg");
+    const myPhoto = require("../images/profile-pic.jpg");
     const SF_Image = require('../images/backgrounds/test.jpg');
 
     return (
@@ -30,7 +30,7 @@ const ContactCard = () => {
                                 </View>
                             </Col>
                             <Col lg="7" className="contactcard_width contactcard_padding_mobile contactcard_padding">
-                                <a className="green-text"><h4 className="font-weight-bold ">Hello!</h4></a>
+                                <a ><h4 className="font-weight-bold ">Hello!</h4></a>
                                 <h3 className="font-weight-bold  contactcard_title"><strong>Emily Weed</strong></h3>
                                 <h5 className="contactcard_info"> <i className="fa fa-envelope"></i> <a href="mailto:eweed001@gmail.com"> Send me an Email</a></h5>
                                 <h5 className="contactcard_info"><i className="fa fa-at"></i> <strong> eweed001</strong></h5>

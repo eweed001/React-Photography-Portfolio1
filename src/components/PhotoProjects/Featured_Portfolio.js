@@ -17,7 +17,7 @@ import misc_data from '../../image-details/misc'
 const headerData = {
   bgImage: require('../../images/backgrounds/header.jpg'),
   title: "portfolio",
-  date: "2017 - Present",
+  date: "2017 - present",
   desc: "everything",
   style: "featured-header-mobile"
 };
@@ -28,9 +28,9 @@ let imageArray = [];
 
 {/************************** Travel Data *************************/ }
 const travelArray = [];
-const featTravel = [1,2,3,4,5,6,7,8,9,10,11,12];
+const featTravel = [1,2,3,4,5,6,7,8,9,10,11,12,13];
 
-for (var i = 1; i <= 12; i++) {
+for (var i = 1; i <= 13; i++) {
   const obj = {
     src: require('../../images/travel/travel-' + i + '.jpg'),
     thumbnail: require('../../images/travel/travel-' + i + '.jpg'),
@@ -45,9 +45,9 @@ for (var i = 1; i <= 12; i++) {
 
 {/************************** pets Data *************************/ }
 const petsArray = [];
-const featPets = [1,2,3,4];
+const featPets = [1,2,3,4,5,6];
 
-for (var i = 1; i <= 4; i++) {
+for (var i = 1; i <= 6; i++) {
   const obj = {
     src: require('../../images/pets/pets-' + i + '.jpg'),
     thumbnail: require('../../images/pets/pets-' + i + '.jpg'),
@@ -61,9 +61,9 @@ for (var i = 1; i <= 4; i++) {
 }
 {/************************** home Data *************************/ }
 const homeArray = [];
-const featHome = [1,2,3];
+const featHome = [1,2,3,4,5];
 
-for (var i = 1; i <= 3; i++) {
+for (var i = 1; i <= 5; i++) {
   const obj = {
     src: require('../../images/home/home-' + i + '.jpg'),
     thumbnail: require('../../images/home/home-' + i + '.jpg'),
