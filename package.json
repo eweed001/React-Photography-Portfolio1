@@ -6,9 +6,10 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot --history-api-fallback",
     "build": "webpack --mode production --history-api-fallback",
-    "deploy": "npm run build && gh-pages -d dist"
+    "deploy": "npm run build && gh-pages -d dist",
+    "predeploy": "npm run build"
   },
-  "homepage": "https://github.com/danielnuwin/React_Photography_Portfolio",
+  "homepage": "https://eweed001.github.io/React-Photography-Portfolio1",
   "author": "Daniel Nguyen",
   "license": "MIT",
   "dependencies": {
@@ -18,7 +19,6 @@
     "cors": "^2.8.4",
     "file-loader": "^1.1.11",
     "font-awesome": "^4.7.0",
-    "gh-pages": "^2.0.1",
     "jquery": "^3.3.1",
     "mdbreact": "^4.7.1",
     "muicss": "^0.9.41",
@@ -51,6 +51,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^0.28.11",
+    "gh-pages": "^5.0.0",
     "html-webpack-plugin": "^3.1.0",
     "style-loader": "^0.20.3",
     "url-loader": "^1.0.1",
