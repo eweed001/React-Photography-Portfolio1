@@ -45,9 +45,9 @@ for (var i = 1; i <= 13; i++) {
 
 {/************************** pets Data *************************/ }
 const petsArray = [];
-const featPets = [1,2,3,4,5,6,7];
+const featPets = [1,2,3,4,5,6,7,8];
 
-for (var i = 1; i <= 7; i++) {
+for (var i = 1; i <= 8; i++) {
   const obj = {
     src: require('../../images/pets/pets-' + i + '.jpg'),
     thumbnail: require('../../images/pets/pets-' + i + '.jpg'),
