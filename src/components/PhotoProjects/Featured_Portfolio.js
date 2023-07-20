@@ -78,9 +78,9 @@ for (var i = 1; i <= 5; i++) {
 
 {/************************** Misc Data *************************/ }
 const miscArray = [];
-const featMisc = [1,2,3,4];
+const featMisc = [1,2,3,4, 5, 6];
 
-for (var i = 1; i <= 4; i++) {
+for (var i = 1; i <= 6; i++) {
   const obj = {
     src: require('../../images/misc/misc-' + i + '.jpg'),
     thumbnail: require('../../images/misc/misc-' + i + '.jpg'),
